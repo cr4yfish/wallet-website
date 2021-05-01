@@ -24,59 +24,118 @@ include_once "mysql.php";
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     </head>
     
-    <body>
-
-        <div id="navbarWrapper">
-
-            <span id="leftNav">
-                <a class="navbarItem navbarItemActive brevia_reg pointer">Wallet</a>
-                <a class="navbarItem brevia_reg pointer">Liquidity</a>
-            </span>
-
-            <span id="rightNav">
-                <div id="accountName" class="bilo_bold">AccountName</div>
-                <form action="logout.php">
-                <button class="logoutBTN pointer lowerInformation bilo_light" type="submit">logout</button>
-                </form>
-                <div id="profilePicture"></div>
-            </span>
-
-        </div>
+    <body onload="getTime();moonScraper();">
 
         <div id="contentWrapper">
 
-            <div id="walletWrapper">
+            <div class="grid-container">
 
-                <div class="listEntry">
-                    <span class="coinName bilo_light">CFX</span>
-                    <span class="value bilo_light">420€</span>
+                <div class="header walletCard">
+
+                    <div id="leftNav">
+                        <span class="unselectable navbarItem bilo_bold" id="clock"></span>
+                    </div>
+        
+                    <span id="rightNav">
+                        <div id="accountName" class="bilo_bold">AccountName</div>
+                        <form action="logout.php">
+                        <button class="logoutBTN pointer lowerInformation bilo_light" type="submit">logout</button>
+                        </form>
+                        <div id="profilePicture"></div>
+                    </span>
+
                 </div>
 
-                <div class="listEntry">
-                    <span class="coinName bilo_light">CFX</span>
-                    <span class="value bilo_light">420€</span>
-                </div>
-
-                <div class="listEntry">
-                    <span class="coinName bilo_light">CFX</span>
-                    <span class="value bilo_light">420€</span>
-                </div>
-
-                <div class="listEntry">
-                    <span class="coinName bilo_light">CFX</span>
-                    <span class="value bilo_light">420€</span>
-                </div>
-
-                <div class="listEntry">
-                    <span class="coinName bilo_light">CFX</span>
-                    <span class="value bilo_light">420€</span>
-                </div>
                 
-                <div id="walletSpacer" class="spacer"></div>
-                <span class="lowerInformation roboto_thin_italic">That's all?</span>
+                <div class="walletCard totalBalance unselectable">
+                    <span class="bilo_bold lowerInformation">Total Balance</span>
+                    <span id="totalBalance" class="moneyText bilo_bold">420€</span>
+                </div>
 
-            </div>
+                <div class="walletCard personalBalance unselectable">
+                    <span class="bilo_bold lowerInformation">Personal Balance</span>
+                    <span id="personalBalance" class="moneyText bilo_bold">420€</span>
+                </div>
 
+                <div class="walletCard liquidity">
+                    <span class="lowerInformation bilo_bold">Liquidity</span>
+
+                    <div class="pairWrapper">
+                        <span class="pairName bilo_bold">CFX/cUSDT</span>
+                        <div class="pairDetails">
+                            <span class="pairAmount bilo_bold">420MLP</span>
+                            <span class="pairValue bilo_bold">420€</span>
+                        </div>  
+                    </div>
+
+                    <div class="pairWrapper">
+                        <span class="pairName bilo_bold">CFX/cUSDT</span>
+                        <div class="pairDetails">
+                            <span class="pairAmount bilo_bold">420MLP</span>
+                            <span class="pairValue bilo_bold">420€</span>
+                        </div>  
+                    </div>
+                    
+                    <div class="pairWrapper">
+                        <span class="pairName bilo_bold">CFX/cUSDT</span>
+                        <div class="pairDetails">
+                            <span class="pairAmount bilo_bold">420MLP</span>
+                            <span class="pairValue bilo_bold">420€</span>
+                        </div>  
+                    </div>
+                    
+                    <div class="pairWrapper">
+                        <span class="pairName bilo_bold">CFX/cUSDT</span>
+                        <div class="pairDetails">
+                            <span class="pairAmount bilo_bold">420MLP</span>
+                            <span class="pairValue bilo_bold">420€</span>
+                        </div>  
+                    </div>
+
+
+                </div>
+
+                <div class="walletCard wallet">
+                    <span class="lowerInformation bilo_bold">Wallet</span>
+
+                    <div class="pairWrapper">
+                        <span class="pairName bilo_bold">CFX</span>
+                        <div class="pairDetails">
+                            <span class="pairAmount bilo_bold">420CFX</span>
+                            <span class="pairValue bilo_bold">420€</span>
+                        </div>  
+                    </div>
+
+                    <div class="pairWrapper">
+                        <span class="pairName bilo_bold">CFX</span>
+                        <div class="pairDetails">
+                            <span class="pairAmount bilo_bold">420CFX</span>
+                            <span class="pairValue bilo_bold">420€</span>
+                        </div>  
+                    </div>
+
+                    <div class="pairWrapper">
+                        <span class="pairName bilo_bold">CFX</span>
+                        <div class="pairDetails">
+                            <span class="pairAmount bilo_bold">420CFX</span>
+                            <span class="pairValue bilo_bold">420€</span>
+                        </div>  
+                    </div>
+
+                    <div class="pairWrapper">
+                        <span class="pairName bilo_bold">CFX</span>
+                        <div class="pairDetails">
+                            <span class="pairAmount bilo_bold">420CFX</span>
+                            <span class="pairValue bilo_bold">420€</span>
+                        </div>  
+                    </div>
+
+                </div>
+
+                <div class="walletCard balanceGraph">
+                    <span class="lowerInformation bilo_bold">Balance Graph</span>
+                </div>
+              </div>
 
 
         </div>

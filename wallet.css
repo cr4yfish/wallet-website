@@ -4,10 +4,12 @@
     --lightPurple: #8D6AD9;
     --green: #39BF42;
     --notWhite: #F2F2F2;
+    --darkBlueishGrey: #A3AECE;
+    --grey: #b3b3b3;
     --shadow: #ff0000;
     --darkestBlue:#22293C;
     --mediumBlue: #2D3657;
-    --spacer: #383F5C;
+    --lightBG: #383F5C;
     --orangeBG: #423F54;
     --orangeFG: #95615A;
     --lightBlue: #509BF6;
@@ -19,43 +21,56 @@ html, body {
     background-color: var(--darkestBlue);
 }
 
-#navbarWrapper {
-    width: 100vw;
-    height: 3rem;
+#contentWrapper {
+    width: 90vw;
+    min-height: 90%;
+    left: 5vw;
     position: relative;
-    top: 0;
-    background-color: var(--mediumBlue);
-    box-shadow: 0 5px 15px  #0000001f;
-    padding-top: 1rem;
+    margin-top: 5vh;
 }
+
+
+.walletCard {
+    border-radius: 1.5rem;
+    background-color: var(--mediumBlue);
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.178);
+}
+
+
+.grid-container {
+    width: 100%;
+    height: 80vh;
+    display: grid;
+    grid-template-columns: 40% 30% 25%;
+    grid-template-rows: 10% 30% 30% 30% ;
+    gap: 2rem 2rem;
+}
+  
+
+
+.header { 
+    grid-area: 1 / 1 / 2 / 4; 
+    height: 60% !important;
+    padding:  1rem 0 1rem 0 ;
+}
+
 
 #leftNav {
     position: relative;
     float: left;
-    margin-left: 4rem;
+    margin-left: 3rem;
 }
 
 .navbarItem {
     position: relative;
-    color: var(--darkBlue);
-    font-size: 1.5rem;
-    margin-right: 5rem;
-    transition: text-shadow 0.25s, color 0.15s;
+    color: var(--darkBlueishGrey);
+    font-size: 2rem;
 }
-
-.navbarItem:hover {
-    color: var(--lightBlue);
-    text-shadow: 0 0 10px var(--darkBlue);
-    transition: text-shadow 0.15s, color 0.15s;
-}
-
-.navbarItemActive {
-    color: var(--lightBlue);
-    text-shadow: 0 0 15px #39bf4238;
-}
-
 
 #rightNav {
+    display: block;
     position: relative;
     float: right;
     margin-right: 4rem;
@@ -83,61 +98,114 @@ html, body {
     transition: background-color 0.15s, color 0.15s;
 }
 
-#contentWrapper {
-    width: 80%;
-    left: 10%;
-    position: relative;
-    margin-top: 10%;
+
+/* -------- balance  -------- */
+
+.totalBalance { 
+    grid-area: 2 / 1 / 3 / 2; 
 }
 
-#walletWrapper {
-    float: left;
-    position: relative;
-    height: fit-content;
-    width: 40%;
+.totalBalance span {
+    margin-top: 5%;
 }
 
-.listEntry {
-    background-color: var(--mediumBlue);
-    position: relative;
-    padding: 0.5rem 1rem 0.5rem 1rem;
-    margin-bottom: 2rem;
-    border-radius: 30px;
+.personalBalance { 
+    grid-area: 3 / 1 / 4 / 2; 
+}
+
+.personalBalance span { 
+    margin-top: 5%; 
+}
+
+.moneyText {
+    font-size: 7rem;
+    margin-top: 0% !important;
     display: block;
-    box-shadow: 0 0px 15px rgba(0, 0, 0, 0.089);
-    transition: background-color 0.55s, box-shadow 0.55s;
-}
-
-.listEntry:hover {
-    background-color: var(--orangeBG);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.205);
-    transition: background-color 0.15s, box-shadow 0.15s;
-}
-
-.coinName {
     position: relative;
-    color: var(--lightGreen);
-    float: left;
-    margin-left: 5%;
-}
-
-.value {
-    position: relative;
-    color: var(--lightGreen);
-    margin-left: 65%;
-}
-
-#walletSpacer {
-    position: relative;
-    width:  80%;
-    left: 10%;
-    border-radius: 30px;
-    height: 0.015rem;
-    margin-bottom: 1rem;
-    background-color: var(--spacer);
-}
-
-#walletWrapper .lowerInformation {
-    position: relative;
+    color: var(--notWhite);
     text-align: center;
 }
+
+/* -------- Liquidity  -------- */
+
+
+.liquidity { 
+    grid-area: 2 / 2 / 4 / 3; 
+    overflow: auto;
+}
+
+.liquidity>span { 
+    margin-top: 5%;
+}
+
+.pairWrapper:first-of-type {
+    margin-top: 5%;
+}
+
+.pairWrapper {
+    padding: .5rem 0.5rem .5rem 0.5rem ;
+    margin-top: 2%;
+    display: block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--lightBG);
+    border-radius: 1rem;
+    width: 70%;
+    height: 4rem;
+    overflow: hidden;
+}
+.pairName {
+    display: inline-block;
+    position: relative;
+    color: var(--notWhite);
+    margin-top: 2rem;
+    font-size: 2rem;
+    margin-left: 1rem;
+    transform: translateY(-50%);
+}
+.pairDetails {
+    margin-top: 2rem;
+    margin-right: 1rem;
+    transform: translateY(-50%);
+    display: block;
+    float: right;
+}
+.pairAmount {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--darkBlueishGrey);
+}
+.pairValue {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--lightGreen);
+}
+
+
+/* -------- Wallet  -------- */
+
+.wallet { 
+    grid-area: 2 / 3 / 5 / 4; 
+}
+
+.wallet span { 
+    margin-top: 5%;
+}
+
+
+
+/* -------- Balance Graph  -------- */
+
+.balanceGraph { 
+    grid-area: 4 / 1 / 5 / 3; 
+}
+
+.balanceGraph span { 
+    margin-top: 2%;
+    margin-left: 3%;
+    float: left;
+}
+
+
+

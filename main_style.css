@@ -21,10 +21,10 @@
   }
 ::-webkit-scrollbar-track {
     border-radius: 10px;
-    background-color: var(--darkPurple);
+    background-color: var(--darkestBlue);
   }
 ::-webkit-scrollbar-thumb {
-    background-color:var(--notWhite);
+    background-color:var(--orangeBG);
     border-radius: 10px;
   }
 
@@ -36,13 +36,22 @@
 
 /* general */
 
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 .pointer {
     cursor: pointer;
 }
 
 
 .headerText {
-    color: black;  
+    color: white;  
 }
 
 .btn {
@@ -65,18 +74,20 @@
 
 .card {
     position: relative;
-    border-radius: 30px;
+    border-radius: 1rem;
     background-color: var(--mediumBlue);
     width: fit-content;
     height: fit-content;
     padding: 1rem;
+    color: var(--notWhite);
 }
 
 .lowerInformation {
     display: block;
     position: relative;
+    text-align: center;
     color: #b3b3b3;
-    font-size: small;
+    font-size: 1rem;
 }
 
 
