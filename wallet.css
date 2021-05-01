@@ -1,0 +1,143 @@
+:root {
+    --darkPurple: #635EF2;
+    --mediumPurple: #7D6BF2;
+    --lightPurple: #8D6AD9;
+    --green: #39BF42;
+    --notWhite: #F2F2F2;
+    --shadow: #ff0000;
+    --darkestBlue:#22293C;
+    --mediumBlue: #2D3657;
+    --spacer: #383F5C;
+    --orangeBG: #423F54;
+    --orangeFG: #95615A;
+    --lightBlue: #509BF6;
+    --darkBlue: #33619C;
+    --lightGreen: #69DED5;
+} 
+
+html, body {
+    background-color: var(--darkestBlue);
+}
+
+#navbarWrapper {
+    width: 100vw;
+    height: 3rem;
+    position: relative;
+    top: 0;
+    background-color: var(--mediumBlue);
+    box-shadow: 0 5px 15px  #0000001f;
+    padding-top: 1rem;
+}
+
+#leftNav {
+    position: relative;
+    float: left;
+    margin-left: 4rem;
+}
+
+.navbarItem {
+    position: relative;
+    color: var(--darkBlue);
+    font-size: 1.5rem;
+    margin-right: 5rem;
+    transition: text-shadow 0.25s, color 0.15s;
+}
+
+.navbarItem:hover {
+    color: var(--lightBlue);
+    text-shadow: 0 0 10px var(--darkBlue);
+    transition: text-shadow 0.15s, color 0.15s;
+}
+
+.navbarItemActive {
+    color: var(--lightBlue);
+    text-shadow: 0 0 15px #39bf4238;
+}
+
+
+#rightNav {
+    position: relative;
+    float: right;
+    margin-right: 4rem;
+}
+
+#accountName {
+    color: var(--darkPurple);
+}
+
+.logoutBTN {
+    position: inherit;
+    background-color: var(--orangeBG);
+    color: var(--orangeFG);
+    float: right;
+    padding: 0.125rem 0.75rem 0.125rem 0.75rem;
+    border-radius: 30px;
+    outline: none;
+    border: none;
+    transition: background-color 0.45s, color 0.45s;
+}
+
+.logoutBTN:hover {
+    background-color: var(--orangeFG);
+    color: var(--notWhite);
+    transition: background-color 0.15s, color 0.15s;
+}
+
+#contentWrapper {
+    width: 80%;
+    left: 10%;
+    position: relative;
+    margin-top: 10%;
+}
+
+#walletWrapper {
+    float: left;
+    position: relative;
+    height: fit-content;
+    width: 40%;
+}
+
+.listEntry {
+    background-color: var(--mediumBlue);
+    position: relative;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    margin-bottom: 2rem;
+    border-radius: 30px;
+    display: block;
+    box-shadow: 0 0px 15px rgba(0, 0, 0, 0.089);
+    transition: background-color 0.55s, box-shadow 0.55s;
+}
+
+.listEntry:hover {
+    background-color: var(--orangeBG);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.205);
+    transition: background-color 0.15s, box-shadow 0.15s;
+}
+
+.coinName {
+    position: relative;
+    color: var(--lightGreen);
+    float: left;
+    margin-left: 5%;
+}
+
+.value {
+    position: relative;
+    color: var(--lightGreen);
+    margin-left: 65%;
+}
+
+#walletSpacer {
+    position: relative;
+    width:  80%;
+    left: 10%;
+    border-radius: 30px;
+    height: 0.015rem;
+    margin-bottom: 1rem;
+    background-color: var(--spacer);
+}
+
+#walletWrapper .lowerInformation {
+    position: relative;
+    text-align: center;
+}

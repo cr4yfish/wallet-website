@@ -1,0 +1,83 @@
+:root {
+    --darkPurple: #635EF2;
+    --mediumPurple: #7D6BF2;
+    --lightPurple: #8D6AD9;
+    --green: #39BF42;
+    --notWhite: #F2F2F2;
+    --grey: #b3b3b3;
+    --shadow: #ff0000;
+    --darkestBlue:#22293C;
+    --mediumBlue: #2D3657;
+    --orangeBG: #423F54;
+    --orangeFG: #95615A;
+    --lightBlue: #509BF6;
+    --darkBlue: #33619C;
+} 
+
+#loginCard {
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+#login_header {
+    position: relative;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: var(--notWhite);
+}
+
+#loginWrapper {
+    width: 100%;
+    align-items: center;
+}
+
+.loginInputWrapper {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.loginHeaderSmall {
+    color: var(--notWhite);
+}
+
+.login_input  {
+    width: 100%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border-radius: 30px;
+    display: inline-block;
+    color: var(--notWhite);
+    background-color: var(--darkestBlue);
+    border: none;
+    box-sizing: border-box;
+    transition: box-shadow 0.25s;
+}
+
+.login_input:focus {
+    outline: none;
+    transition: box-shadow 0.15s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.157);
+}
+
+.login_input::placeholder {
+    color: var(--grey);
+    font-family: bilo, sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+#login_submit {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#loginBTN {
+    margin-top: 1rem;
+    text-align: center;
+}

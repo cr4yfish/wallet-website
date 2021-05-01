@@ -1,0 +1,163 @@
+:root {
+    --darkPurple: #635EF2;
+    --mediumPurple: #7D6BF2;
+    --lightPurple: #8D6AD9;
+    --green: #39BF42;
+    --notWhite: #F2F2F2;
+    --grey: #b3b3b3;
+    --shadow: #ff0000;
+    --darkestBlue:#22293C;
+    --mediumBlue: #2D3657;
+    --orangeBG: #423F54;
+    --orangeFG: #95615A;
+    --lightBlue: #509BF6;
+    --darkBlue: #33619C;
+} 
+
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 15px;
+  }
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: var(--darkPurple);
+  }
+::-webkit-scrollbar-thumb {
+    background-color:var(--notWhite);
+    border-radius: 10px;
+  }
+
+::selection {
+    background-color: var(--darkPurple);
+    color: var(--notWhite);
+}
+
+
+/* general */
+
+.pointer {
+    cursor: pointer;
+}
+
+
+.headerText {
+    color: black;  
+}
+
+.btn {
+    color: white;
+    background-color: var(--darkPurple);
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 19px;
+    cursor: pointer;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.157);
+    transition: background-color 0.25s, box-shadow 0.25s;
+}
+
+.btn:hover {
+    background-color: var(--lightPurple);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.157);
+    transition: background-color 0.15s, box-shadow 0.15s;
+}
+
+.card {
+    position: relative;
+    border-radius: 30px;
+    background-color: var(--mediumBlue);
+    width: fit-content;
+    height: fit-content;
+    padding: 1rem;
+}
+
+.lowerInformation {
+    display: block;
+    position: relative;
+    color: #b3b3b3;
+    font-size: small;
+}
+
+
+
+/* Welcome screen */
+
+
+
+body, html {
+    height: 100%;
+    margin: 0;
+    overflow: auto;
+}
+
+.checkerBackground {
+    background-image: url("img/stacked-steps-haikei.svg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#welcome_wrapper {
+    width: 30%;
+    height: 20%;
+    left: 50%;
+    top: 40%;
+    transform: translateX(-50%) translateY(-50%);
+    position: relative;
+    background-color: var(--darkestBlue);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.452);
+    border-radius: 15px;
+}
+
+#welcome_title {
+    margin: 0;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    font-size: 4rem;
+    color: var(--notWhite);
+}
+
+#welcomeSubtitle {
+    color: #a8a8a8;
+    display: block;
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10px;
+    font-size: 0.75rem;
+}
+
+@media screen and (max-width: 980px){
+    #welcome_title {
+        font-size: 2rem;
+    }
+    #welcomeSubtitle {
+        font-size: 0.6rem;
+    }
+}
+
+@media screen and (max-width: 480px){
+    #welcome_title {
+        font-size: 1rem;
+    }
+    #welcomeSubtitle {
+        display: none;
+    }
+}
+
+#stackedSteps {
+    position: absolute;
+    left: 0;
+    top: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+}
