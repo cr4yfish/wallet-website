@@ -4,14 +4,18 @@
     --lightPurple: #8D6AD9;
     --green: #39BF42;
     --notWhite: #F2F2F2;
+    --darkBlueishGrey: #A3AECE;
     --grey: #b3b3b3;
     --shadow: #ff0000;
     --darkestBlue:#22293C;
     --mediumBlue: #2D3657;
+    --lightBG: #383F5C;
     --orangeBG: #423F54;
     --orangeFG: #95615A;
     --lightBlue: #509BF6;
     --darkBlue: #33619C;
+    --lightGreen: #69DED5;
+    --darkGreen: #314267;
 } 
 
 #loginCard {
@@ -80,4 +84,59 @@
 #loginBTN {
     margin-top: 1rem;
     text-align: center;
+}
+
+#loginBTN:hover {
+    text-decoration: underline;
+}
+
+#registerPopup {
+    z-index: 10;
+    position: absolute;
+    margin-left: 50%;
+    margin-top: 30%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: var(--darkGreen);
+    width: 25rem;
+    height: 10rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.507);
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+#registerPopup span{
+    display: block;
+    position: relative;
+    color: var(--lightGreen);
+    text-align: center;
+}
+
+
+#checkIcon {
+    background-image: url(img/check.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 4rem;
+    height: 4rem;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0%;
+    margin-bottom: 1rem;
+}
+
+.closeIcon {
+    background-image: url(img/close.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
 }

@@ -15,6 +15,7 @@
     --lightBlue: #509BF6;
     --darkBlue: #33619C;
     --lightGreen: #69DED5;
+    --darkGreen: #314267;
 } 
 
 html, body {
@@ -29,7 +30,6 @@ html, body {
     margin-top: 5vh;
 }
 
-
 .walletCard {
     border-radius: 1.5rem;
     background-color: var(--mediumBlue);
@@ -37,7 +37,6 @@ html, body {
     height: 100%;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.178);
 }
-
 
 .grid-container {
     width: 100%;
@@ -47,26 +46,96 @@ html, body {
     grid-template-rows: 10% 30% 30% 30% ;
     gap: 2rem 2rem;
 }
-  
-
 
 .header { 
     grid-area: 1 / 1 / 2 / 4; 
-    height: 60% !important;
+    height: 75% !important;
     padding:  1rem 0 1rem 0 ;
 }
-
 
 #leftNav {
     position: relative;
     float: left;
     margin-left: 3rem;
+    display: block;
 }
 
 .navbarItem {
     position: relative;
     color: var(--darkBlueishGrey);
     font-size: 2rem;
+}
+
+.refreshBTN {
+    display: block;
+    position: relative;
+    background-color: var(--darkGreen);
+    color: var(--lightGreen);
+    padding: 0.125rem 0.75rem 0.125rem 0.75rem;
+    border-radius: 30px;
+    outline: none;
+    border: none;
+    width: 4rem;
+    transition: background-color 0.45s, color 0.45s;
+}
+
+.refreshBTN:hover {
+    background-color: var(--lightGreen);
+    color: var(--notWhite);
+}
+
+/* refresh loading bar */
+
+#refreshPopup {
+    z-index: 100;
+    position: fixed;
+    border-radius: 1rem;
+    width: 19rem;
+    height: 8rem;
+    transform: translateX(-25%) translateY(-25%);
+    right: 0;
+    bottom: 0;
+    background-color: var(--mediumBlue);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.308);
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+#refreshPopup span {
+    display: block;
+    margin-top: 6%;
+    position: relative;
+    text-align: center;
+    color: var(--lightGreen);
+}
+
+#loadingBarWrapper {
+    margin-top: 5%;
+    border-radius: 1rem;
+    position: relative;
+    background-color: var(--darkGreen);
+    width: 80%;
+    height: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    transform-origin: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#loadingBar {
+    background-color: var(--lightGreen);
+    animation: none;
+    border-radius: inherit;
+    height: inherit;
+    width: 0;
+    box-shadow: 0 0 20px var(--TransRed);
+}
+
+@keyframes load {
+    0% { width: 0; }
+    100% { width: 100%; }
 }
 
 #rightNav {
@@ -128,7 +197,6 @@ html, body {
 
 /* -------- Liquidity  -------- */
 
-
 .liquidity { 
     grid-area: 2 / 2 / 4 / 3; 
     overflow: auto;
@@ -153,17 +221,19 @@ html, body {
     border-radius: 1rem;
     width: 70%;
     height: 4rem;
-    overflow: hidden;
+    overflow: auto;
 }
+
 .pairName {
     display: inline-block;
     position: relative;
     color: var(--notWhite);
     margin-top: 2rem;
-    font-size: 2rem;
+    font-size: 1rem;
     margin-left: 1rem;
     transform: translateY(-50%);
 }
+
 .pairDetails {
     margin-top: 2rem;
     margin-right: 1rem;
@@ -171,17 +241,39 @@ html, body {
     display: block;
     float: right;
 }
+
 .pairAmount {
     display: block;
     font-size: 1.2rem;
     color: var(--darkBlueishGrey);
 }
-.pairValue {
+
+.pairValue  {
     display: block;
     font-size: 1.2rem;
     color: var(--lightGreen);
 }
 
+@media screen and (max-height: 900px) {
+    .refreshBTN {
+        display: inline;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .pairName {
+        font-size: 1.2vw;
+    }
+    .pairAmount, .pairValue{
+        font-size: 0.7rem;
+    }
+    .moneyText {
+        font-size: 7vw;
+    }
+    .refreshBTN {
+        display: inline;
+    }
+}
 
 /* -------- Wallet  -------- */
 
@@ -189,11 +281,9 @@ html, body {
     grid-area: 2 / 3 / 5 / 4; 
 }
 
-.wallet span { 
+.wallet>span { 
     margin-top: 5%;
 }
-
-
 
 /* -------- Balance Graph  -------- */
 
@@ -206,6 +296,3 @@ html, body {
     margin-left: 3%;
     float: left;
 }
-
-
-

@@ -15,11 +15,7 @@ if(isset($_POST["submit"])) {
             header("Location: wallet.php");
         } else {
         }
-        
     } else {
     }
 }
-
-
-
 ?>
