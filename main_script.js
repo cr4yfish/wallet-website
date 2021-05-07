@@ -6,12 +6,12 @@ function sleep(ms) {
 async function checkSite() {
 
     if (localStorage.getItem("loggedIn") == false) {
-        window.open("login.html", "_self");
+        window.open("login.php", "_self");
     } else if(localStorage.getItem("loggedIn") == true){
         window.open("wallet.html", "_self");
     } else {
         await sleep(3000);
-        window.open("login.html", "_self");
+        window.open("login.php", "_self");
     }
 }
 
@@ -27,7 +27,17 @@ async function getTime() {
         } else {
             var seconds = currentDate.getSeconds();
         }
-        let time = currentDate.getHours() + ":" + currentDate.getMinutes() + ":" + seconds;
+        if (currentDate.getMinutes() < 10) {
+            var minutes = "0" + currentDate.getMinutes();
+        } else {
+            var minutes = currentDate.getMinutes();
+        }
+        if (currentDate.getHours() < 10) {
+            var hours = "0" + currentDate.getHours();
+        } else {
+            var hours = currentDate.getHours();
+        }
+        let time = hours + ":" + minutes + ":" + seconds;
         clockElement.textContent = time + " Uhr";
         counter++;
         await sleep(1000);
@@ -66,7 +76,7 @@ function loginInstead() {
 
     // change php file
     var form_control = document.getElementById("form_control");
-    form_control.setAttribute("action", "login.php")
+    form_control.setAttribute("action", "loginProcess.php")
 
     // change button text
     var button = document.getElementById("login_submit");
@@ -176,7 +186,7 @@ async function moonScraper() {
 
     if (localStorage.getItem("totalBalance") == null ) {
 
-        var url = "https://app.scrapingbee.com/api/v1/?api_key=96ATE988JKEB0EWSQN25237HZCHO5M4Y3AMFWASLZ3NWQU8UAZGR9PD6BOX3ELBUUMKYBTJNXGWHZX9O&url=https%3A%2F%2Fmoonswap.fi%2Fanalytics%2Faccount%2Fcfx%3Aaajevc03t7dcwh6627xg72p6bpkzhv0u3a8fy1uz8n&wait=20000&block_ads=false&block_resources=false";
+        var url = "https://app.scrapingbee.com/api/v1/?api_key=E4TV3H9N8M9HL5VK3ZH7YYAY7TCHZAFZO6FAK80F0907H9LIQV83PJPOTKB1YFEEYJG9SJ9Y7PS2UR0F&url=https%3A%2F%2Fmoonswap.fi%2Fanalytics%2Faccount%2Fcfx%3Aaajevc03t7dcwh6627xg72p6bpkzhv0u3a8fy1uz8n&wait=20000&block_ads=false&block_resources=false";
 
         var xhr = new XMLHttpRequest();
         
@@ -293,9 +303,9 @@ function drawLiquidity(pairName, pairAmount, pairValue) {
         var pairDetailsElement = document.createElement("div");
         pairDetailsElement.setAttribute("class", "pairDetails");
 
-        var pairAmountElement = document.createElement("span");
+        /* var pairAmountElement = document.createElement("span");
         pairAmountElement.setAttribute("class", "pairAmount bilo_bold");
-        pairAmountElement.textContent = pairAmount;
+        pairAmountElement.textContent = pairAmount; */
 
         var pairValueElement = document.createElement("span");
         pairValueElement.setAttribute("class", "pairValue bilo_bold"); 
@@ -303,7 +313,7 @@ function drawLiquidity(pairName, pairAmount, pairValue) {
 
         // attach them
         pairDetailsElement.appendChild(pairValueElement);
-        pairDetailsElement.appendChild(pairAmountElement);
+        // pairDetailsElement.appendChild(pairAmountElement);
 
         pairWrapperElement.appendChild(pairNameElement);
         pairWrapperElement.appendChild(pairDetailsElement);

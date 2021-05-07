@@ -14,10 +14,11 @@ if(isset($_POST["submit"])) {
         $hash = password_hash($_POST["password"], PASSWORD_BCRYPT);
         $stmt->bindParam(":password", $hash);
         $stmt->execute();
-        header("Location: login.html");
+        header("Location: login.php");
         exit;
 
     } else {
+        header("");
         echo "Username already taken";
         exit;
     }

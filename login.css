@@ -53,18 +53,19 @@
     width: 100%;
     padding: 10px 20px;
     margin: 8px 0;
-    border-radius: 30px;
+    border-radius: 5px;
     display: inline-block;
     color: var(--notWhite);
     background-color: var(--darkestBlue);
     border: none;
     box-sizing: border-box;
-    transition: box-shadow 0.25s;
+    transition: box-shadow 0.25s, border-radius 0.5s;
 }
 
 .login_input:focus {
+    border-radius: 30px;
     outline: none;
-    transition: box-shadow 0.15s;
+    transition: box-shadow 0.15s, border-radius 0.5s;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.157);
 }
 

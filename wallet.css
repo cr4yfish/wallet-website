@@ -218,10 +218,16 @@ html, body {
     left: 50%;
     transform: translateX(-50%);
     background-color: var(--lightBG);
+    transition: background-color 0.25s;
     border-radius: 1rem;
     width: 70%;
     height: 4rem;
     overflow: auto;
+}
+
+.pairWrapper:hover {
+    background-color: var(--orangeBG);
+    transition: background-color 0.25s;
 }
 
 .pairName {
